@@ -1,0 +1,168 @@
+/* Global styles */
+body {
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  background: linear-gradient(to right, #8360c3, #2ebf91);
+  padding: 40px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  animation: fadeIn 1s ease-in;
+}
+
+/* Container */
+#quiz-container {
+  background: #ffffff;
+  padding: 30px 40px;
+  border-radius: 15px;
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2);
+  width: 100%;
+  max-width: 550px;
+  transition: all 0.3s ease;
+  animation: slideUp 0.8s ease;
+}
+
+/* Question */
+h2 {
+  margin-bottom: 25px;
+  font-size: 1.7rem;
+  background: linear-gradient(to right, #30cfd0, #330867);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  animation: fadeIn 0.6s ease-in;
+}
+
+/* Answer options */
+#options button {
+  display: block;
+  margin: 12px 0;
+  padding: 14px 20px;
+  width: 100%;
+  border: 2px solid #ddd;
+  border-radius: 10px;
+  background: #f2f2f2;
+  cursor: pointer;
+  font-size: 1rem;
+  transition: all 0.3s ease;
+  position: relative;
+  overflow: hidden;
+}
+
+#options button:hover {
+  background: #e6e6e6;
+  transform: translateY(-2px);
+}
+
+#options button:active {
+  transform: scale(0.98);
+  box-shadow: inset 0 2px 4px rgba(0, 0, 0, 0.2);
+}
+
+/* Correct and incorrect answer effects */
+button[style*="lightgreen"] {
+  background: #d4edda !important;
+  border-color: #28a745;
+  color: #155724;
+  font-weight: bold;
+  box-shadow: 0 0 15px rgba(40, 167, 69, 0.5);
+  animation: correctFlash 0.5s ease;
+}
+
+button[style*="salmon"] {
+  background: #f8d7da !important;
+  border-color: #dc3545;
+  color: #721c24;
+  font-weight: bold;
+  box-shadow: 0 0 15px rgba(220, 53, 69, 0.4);
+  animation: incorrectShake 0.4s ease;
+}
+
+/* Unique animation for selected button */
+button.selected {
+  background: #ffdf6c !important;
+  animation: selectedButtonBounce 0.3s ease;
+}
+
+/* Next button */
+#next {
+  margin-top: 25px;
+  padding: 14px 28px;
+  background: #00b09b;
+  background: linear-gradient(to right, #96c93d, #00b09b);
+  color: white;
+  font-size: 1.05rem;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.15);
+  transition: all 0.3s ease;
+}
+
+#next:hover {
+  transform: scale(1.05);
+  background: linear-gradient(to right, #00b09b, #96c93d);
+}
+
+#next:disabled {
+  background: #cccccc;
+  cursor: not-allowed;
+  box-shadow: none;
+}
+
+/* Score */
+#score {
+  margin-top: 30px;
+  font-size: 1.4rem;
+  font-weight: bold;
+  color: #333;
+  text-align: center;
+  animation: fadeIn 1s ease-in;
+}
+
+/* Animations */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: scale(0.95);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+@keyframes slideUp {
+  from {
+    opacity: 0;
+    transform: translateY(40px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes correctFlash {
+  0% { transform: scale(1); }
+  50% { transform: scale(1.03); }
+  100% { transform: scale(1); }
+}
+
+@keyframes incorrectShake {
+  0% { transform: translateX(0); }
+  25% { transform: translateX(-5px); }
+  50% { transform: translateX(5px); }
+  75% { transform: translateX(-5px); }
+  100% { transform: translateX(0); }
+}
+
+@keyframes selectedButtonBounce {
+  0% { transform: scale(1); }
+  50% { transform: scale(1.05); }
+  100% { transform: scale(1); }
+}
+
+
+
+
+
